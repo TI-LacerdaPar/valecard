@@ -40,21 +40,15 @@ api_key = os.getenv("API_KEY")
 #     "tipotransacao": "TODAS"
 # }
 
+# capturar os dados da api de forma mensal
+
 today = datetime.today()
 
-data_inicial = today.replace(day=1).strftime("%Y-%m-%d")
+data_inicial = (today - timedelta(days=7)).strftime("%Y-%m-%d")
 data_final = today.strftime("%Y-%m-%d")
-logger.info(data_final)
 
-# captura os dados por mês - o mês
-
-# today = datetime.today()
-
-# primeiro_dia = today.replace(day=1)
-# ultimo_dia = today.replace(day=calendar.monthrange(today.year, today.month)[1])
-
-# data_inicial = primeiro_dia.strftime("%Y-%m-%d")
-# data_final = ultimo_dia.strftime("%Y-%m-%d")
+logger.info(f"Data inicial: {data_inicial}")
+logger.info(f"Data final: {data_final}")
 
 API_URL = os.getenv("API_URL")
 
@@ -69,7 +63,6 @@ API_HEADERS = {
     "Content-Type": "application/json",
     "Authorization": api_key
 }
-
 
 def conectar_banco():
     try:
@@ -89,6 +82,7 @@ def buscar_dados():
         response.raise_for_status()
 
         logger.info(f"Consulta API realizada com status {response.status_code}")
+        print(response)
 
         return response.json()
 
