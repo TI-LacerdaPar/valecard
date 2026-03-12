@@ -58,8 +58,8 @@ logger.info(f"Data final: {data_final}")
 
 API_BODY = {
     "contratoCliente": "136768",
-    "dataInicial": "2025-10-01",
-    "dataFinal": "2025-10-31",
+    "dataInicial": "2026-03-01",
+    "dataFinal": "2026-03-12",
     "tipotransacao": "TODAS"
 }
 
@@ -207,7 +207,7 @@ def salvar_dados_gastos(dados):
     conn.commit()
     conn.close()
 
-    logger.info(f"{registros} registros inseridos na tabela Gastos com sucesso")
+    logger.info(f"{registros} registros inseridos na tabela Gastos com sucesso!!!")
 
 # execução principal
 
@@ -225,7 +225,7 @@ def main():
 
     salvar_dados_gastos(dados)
 
-    logger.info("Execução finalizada com sucesso")
+    logger.info("Execução finalizada com sucesso!!!")
 
 
 if __name__ == "__main__":

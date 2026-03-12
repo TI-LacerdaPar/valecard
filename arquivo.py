@@ -123,7 +123,6 @@ def salvar_dados_gastos(dados):
     IF OBJECT_ID(N'dbo.Gastos', N'U') IS NULL
     BEGIN
         CREATE TABLE dbo.Gastos (
-            gastos_id INT IDENTITY(1,1) PRIMARY KEY,
             data DATETIME,
             motorista NVARCHAR(255),
             numeroFrota FLOAT,
