@@ -75,7 +75,6 @@ def conectar_banco():
         logging.error(f"Erro ao conectar: {e}")
         raise
 
-
 def buscar_dados():
     try:
         response = requests.post(API_URL, headers=API_HEADERS, json=API_BODY, timeout=30)
@@ -90,19 +89,7 @@ def buscar_dados():
         logging.error(f"Erro ao consultar API: {e}")
         return []
 
-# def converter_data(data_str):
 
-#     if not data_str:
-#         return None
-
-#     try:
-#         return datetime.strptime(data_str.strip(), "%d/%m/%Y %H:%M:%S")
-#     except ValueError:
-#         try:
-#             return datetime.strptime(data_str.strip(), "%d/%m/%Y")
-#         except ValueError:
-#             return None
-        
 def converter_data(data_str):
     if not data_str:
         return None
