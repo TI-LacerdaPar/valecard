@@ -44,22 +44,10 @@ data_final = today.strftime("%Y-%m-%d")
 logger.info(f"Data inicial: {data_inicial}")
 logger.info(f"Data final: {data_final}")
 
-API_BODY = {
-    "contratoCliente": "136768",
-    "dataInicial": data_inicial,
-    "dataFinal": data_final,
-    "tipotransacao": "TODAS"
-}
-
-API_HEADERS = {
-    "Content-Type": "application/json",
-    "Authorization": api_key
-}
-
 # API_BODY = {
 #     "contratoCliente": "136768",
-#     "dataInicial": "2026-02-01",
-#     "dataFinal": "2026-02-28",
+#     "dataInicial": data_inicial,
+#     "dataFinal": data_final,
 #     "tipotransacao": "TODAS"
 # }
 
@@ -67,6 +55,18 @@ API_HEADERS = {
 #     "Content-Type": "application/json",
 #     "Authorization": api_key
 # }
+
+API_BODY = {
+    "contratoCliente": "136768",
+    "dataInicial": "2025-04-01",
+    "dataFinal": "2025-04-30",
+    "tipotransacao": "TODAS"
+}
+
+API_HEADERS = {
+    "Content-Type": "application/json",
+    "Authorization": api_key
+}
 
 # conexão banco
 
